@@ -1,7 +1,7 @@
 function addRow(tableID) {
 	var table = document.getElementById(tableID);
 	var rowCount = table.rows.length;
-	if(rowCount < 5){							// limit the user from creating fields more than your limits
+	if(rowCount < 5){
 		var row = table.insertRow(rowCount);
 		var colCount = table.rows[0].cells.length;
 		for(var i=0; i<colCount; i++) {
@@ -9,7 +9,7 @@ function addRow(tableID) {
 			newcell.innerHTML = table.rows[0].cells[i].innerHTML;
 		}
 	}else{
-		 alert("Maks antall utdanninger er 5");
+		 alert("Maks antall rader er 5");
 			   
 	}
 }
@@ -21,8 +21,8 @@ function deleteRow(tableID) {
 		var row = table.rows[i];
 		var chkbox = row.cells[0].childNodes[0];
 		if(null != chkbox && true == chkbox.checked) {
-			if(rowCount <= 1) { 						// limit the user from removing all the fields
-				alert("Kan ikke slette alle utdanningene.");
+			if(rowCount <= 1) { 		
+				alert("Må ha minimum en rad.");
 				break;
 			}
 			table.deleteRow(i);

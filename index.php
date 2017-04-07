@@ -46,6 +46,16 @@
            $error[] = 'Vennligst oppgi navn';
        }
    
+       // Skjekke om adresse er ført inn
+       if($adresse ==''){
+           $error[] = 'Vennligst oppgi adresse';
+       }
+   
+       // Skjekke om telefonnummer er ført inn
+       if($telefon == ''){
+            $error[] = 'Vennligst oppgi telefonnummer';
+       }
+   
        //Skjekke om epost addressen er på riktig format
        if(!filter_var($epost, FILTER_VALIDATE_EMAIL)){
             $error[] = 'Vennligst oppgi en gyldig epost adresse!';
@@ -60,10 +70,6 @@
            ?>
 <?php 
    include('oppsett.php');
-   ?>
-   <link href="https://bootswatch.com/readable/bootstrap.min.css" type="stylesheet">
-   
-   <?php
    include('dokument.php');
    $body = ob_get_clean();
    
@@ -96,14 +102,18 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Fra CV Til PDF</title>
       <?php include('oppsett.php');?> 
-      <script type="text/javascript" src="js/script.js"></script> 
    </head>
    <body>
+      <header>
+         <div class="container text-left">
+            <h1><strong>Fra CV til PDF!</strong></h1>
+            <p>Før inn all informasjon du måtte ønske til din CV, og trykk <strong>generer min CV!</strong> for å få en perfekt formatert CV</p>
+         </div>
+      </header>
       <div class="container">
-         <h1><strong>Fra CV til PDF!</strong></h1>
          <form action='' method='post'>
             <div class="row">
-               <div class="col-sm-3">
+               <div class="col-md-3">
                   <div class="row form-group">
                      <fieldset>
                         <legend>Personlig info</legend>
@@ -112,42 +122,182 @@
                               <tr>
                                  <p>
                                  <td> 
-                                    <label>Navn</label><br><input type='text' name='navn' value='Ola Nordmann'>
+                                    <label>Navn</label><br><input class="form-control" type='text' name='navn' placeholder="Ola Nordmann">
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Epost</label><br><input type='email' name='epost' value='Loremipsum@lorem.com'>  
+                                    <label>Epost</label><br><input class="form-control" type='email' name='epost' placeholder="mail@mail.no">  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Telefon</label><br><input type='tel' name='telefon' value='43444343' maxlength="8">  
+                                    <label>Telefon</label><br><input class="form-control" type='tel' name='telefon' maxlength="8" placeholder="98765432">  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Adresse</label><br><input type='text' name='adresse' value='demoveien 1, 5239 Rådal'>  
+                                    <label>Adresse</label><br><input class="form-control" type='text' name='adresse' placeholder='Eksempelveien 1, 1010 Eksempel'>  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>LinkedIn</label><br><input type='url' name='linkedin' value='https://www.linkedin.com/in/kalliainen/'>  
+                                    <label>LinkedIn</label><br><input class="form-control" type='url' name='linkedin' placeholder='linkedin.com/in/profilnavn/'>  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Fødselsdato</label><br><input type='date' name='fodselsdato' value='1996-01-01'>  
+                                    <label>Fødselsdato</label><br><input class="form-control" type='text' name='fodselsdato' id="fodselsdato">  
+                                 </td>
+                                 </p>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </fieldset>
+                  </div>
+                  <div class="row form-group">
+                     <div class = "col-lg">
+                        <fieldset>
+                           <legend>Interesser</legend>
+                           <table id="interesserTable">
+                              <tbody>
+                                 <tr>
+                                    <p>
+                                    <td>                               
+                                       <textarea class="form-control" type="text" name="interesser_info" rows="6" cols="35" placeholder="Mine interesser er..."></textarea> 
+                                    </td>
+                                    </p>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </fieldset>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <p><br><input class="btn-lg btn-danger" type='submit' name='submit' value='Generer min CV!'></p>
+                  </div>
+               </div>
+               <div class="col-md-1">
+               </div>
+               <div class="col-md-8">
+                  <div class="row form-group">
+                     <fieldset>
+                        <legend>Utdanning</legend>
+                        <p> 
+                           <input type="button" class="btn btn-primary" value="Legg til utdanning" onClick="addRow('utdanningTable')" /> 
+                           <input type="button" class="btn btn-primary" value="Fjern utdanning" onClick="deleteRow('utdanningTable')"  /> 
+                        <p>(Marker en boks for å slette.)</p>
+                        </p>
+                        <table id="utdanningTable">
+                           <tbody>
+                              <tr>
+                                 <p>
+                                 <td><input type="checkbox" name="chk[]"/><br><br></td>
+                                 <td>
+                                    <label>Utdanningssted</label><br><input class="form-control" type="text" name="tab_utdanning_sted[]">
+                                 </td>
+                                 <td>
+                                    <label>Info om utdanning</label><br><input class="form-control" type='text' name="tab_utdanning_info[]">
+                                 </td>
+                                 <td>
+                                    <label>Fra</label><br><input class="form-control datepicker" type='text' name="tab_utdanning_start[]">
+                                 </td>
+                                 <td>
+                                    <label>Til</label><br><input class="form-control datepicker" type='text' name="tab_utdanning_slutt[]">
+                                 </td>
+                                 </p>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </fieldset>
+                  </div>
+                  <div class="row form-group">
+                     <fieldset>
+                        <legend>Erfaring</legend>
+                        <p> 
+                           <input type="button" class="btn btn-primary" value="Legg til arbeidssted" onClick="addRow('erfaringTable')" /> 
+                           <input type="button" class="btn btn-primary" value="Fjern arbeidssted" onClick="deleteRow('erfaringTable')"  /> 
+                        <p>(Marker en boks for å slette.)</p>
+                        </p>
+                        <table id="erfaringTable">
+                           <tbody>
+                              <tr>
+                                 <p>
+                                 <td><input type="checkbox" name="chk[]"/></td>
+                                 <td>
+                                    <label>Firma</label><br><input class="form-control" type="text" name="tab_erfaring_firma[]">
+                                 </td>
+                                 <td>
+                                    <label>Type</label><br>
+                                    <select class="form-control" name="tab_erfaring_stilling[]">
+                                       <option value="">----
+                                       </option>
+                                       <option value="Deltid">Deltid
+                                       </option>
+                                       <option value="Heltid">Heltid
+                                       </option>
+                                    </select>
+                                 </td>
+                                 <td>
+                                    <label>Info om stilling</label><br><input class="form-control" type='text' name="tab_erfaring_info[]">
+                                 </td>
+                                 <td>
+                                    <label>Sted</label><br><input class="form-control" type='text' name="tab_erfaring_adresse[]">
+                                 </td>
+                                 <td>
+                                    <label>Fra</label><br><input class="form-control datepicker" type='text' name="tab_erfaring_start[]">
+                                 </td>
+                                 <td>
+                                    <label>Til</label><br><input class="form-control datepicker" type='text' name="tab_erfaring_slutt[]">
+                                 </td>
+                                 </p>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </fieldset>
+                  </div>
+                  <div class="row form-group">
+                     <fieldset>
+                        <legend>Referanser</legend>
+                        <p> 
+                           <input type="button" class="btn btn-primary" value="Legg til referanse" onClick="addRow('referanseTable')" /> 
+                           <input type="button" class="btn btn-primary" value="Fjern referanse" onClick="deleteRow('referanseTable')"  /> 
+                        <p>(Marker en boks for å slette.)</p>
+                        </p>
+                        <table id="referanseTable">
+                           <tbody>
+                              <tr>
+                                 <td><input type="checkbox" name="chk[]"  /></td>
+                                 <p>
+                                 <td>
+                                    <label>Navn</label><br>
+                                    <input class="form-control" type="text" name="tab_referanse_navn[]"> 
+                                 </td>
+                                 <td>
+                                    <label>Firma</label><br>
+                                    <input class="form-control" type="text" name="tab_referanse_firma[]">
+                                 </td>
+                                 <td>
+                                    <label>Stilling</label><br>
+                                    <input class="form-control" type="text" name="tab_referanse_stilling[]"> 
+                                 </td>
+                                 <td>
+                                    <label>Telefon</label><br>
+                                    <input class="form-control" type="tel" name="tab_referanse_nummer[]" maxlength="8"> 
+                                 </td>
+                                 <td>
+                                    <label>Epost</label><br>
+                                    <input class="form-control" type="text" name="tab_referanse_epost[]"> 
                                  </td>
                                  </p>
                               </tr>
@@ -170,28 +320,11 @@
                                  <td><input type="checkbox" name="chk[]"  /></td>
                                  <td>
                                     <label>Type</label><br>
-                                    <input type="text" name="tab_annet_type[]"> 
+                                    <input class="form-control" type="text" name="tab_annet_type[]"> 
                                  </td>
                                  <td>
                                     <label>Info</label><br>
-                                    <input type="text" name="tab_annet_info[]">
-                                 </td>
-                                 </p>
-                              </tr>
-                           </tbody>
-                        </table>
-                     </fieldset>
-                  </div>
-                  <div class="row form-group">
-                     <fieldset>
-                        <legend>Interesser</legend>
-                        <table id="interesserTable">
-                           <tbody>
-                              <tr>
-                                 <p>
-                                 <td>
-                                    <label>Interesser</label><br>
-                                    <input type="text" name="interesser_info"> 
+                                    <input class="form-control" type="text" name="tab_annet_info[]">
                                  </td>
                                  </p>
                               </tr>
@@ -200,130 +333,9 @@
                      </fieldset>
                   </div>
                </div>
-               <div class="col-sm-1">
-               </div>
-               <div class="col-sm-3">
-                  <div class="row form-group">
-                     <fieldset>
-                        <legend>Utdanning</legend>
-                        <p> 
-                           <input type="button" class="btn btn-primary" value="Legg til utdanning" onClick="addRow('utdanningTable')" /> 
-                           <input type="button" class="btn btn-primary" value="Fjern utdanning" onClick="deleteRow('utdanningTable')"  /> 
-                        <p>(Marker en boks for å slette.)</p>
-                        </p>
-                        <table id="utdanningTable">
-                           <tbody>
-                              <tr>
-                                 <p>
-                                 <td><input type="checkbox" name="chk[]"  /><br><br></td>
-                                 <td>
-                                    <label>Utdanningssted</label><br><input type="text" name="tab_utdanning_sted[]">
-                                 </td>
-                                 <td>
-                                    <label>Info om utdanning</label><br><input type='text' name="tab_utdanning_info[]">
-                                 </td>
-                                 <td>
-                                    <label>Fra</label><br><input type='date' name="tab_utdanning_start[]">
-                                 </td>
-                                 <td>
-                                    <label>Til</label><br><input type='date' name="tab_utdanning_slutt[]">
-                                 </td>
-                                 </p>
-                              </tr>
-                           </tbody>
-                        </table>
-                     </fieldset>
-                  </div>
-                  <div class="row form-group">
-                     <fieldset>
-                        <legend>Erfaring</legend>
-                        <p> 
-                           <input type="button" class="btn btn-primary" value="Legg til arbeidssted" onClick="addRow('erfaringTable')" /> 
-                           <input type="button" class="btn btn-primary" value="Fjern arbeidssted" onClick="deleteRow('erfaringTable')"  /> 
-                        <p>(Marker en boks for å slette.)</p>
-                        </p>
-                        <table id="erfaringTable">
-                           <tbody>
-                              <tr>
-                                 <p>
-                                 <td><input type="checkbox" name="chk[]"/></td>
-                                 <td>
-                                    <label>Firma</label><br><input type="text" name="tab_erfaring_firma[]">
-                                 </td>
-                                 <td>
-                                    <label>Type</label><br>
-                                    <select name="tab_erfaring_stilling">
-                                       <option value="">----
-                                       </option>
-                                       <option value="Deltid">Deltid
-                                       </option>
-                                       <option value="Heltid">Heltid
-                                       </option>
-                                    </select>
-                                 </td>
-                                 <td>
-                                    <label>Info om stilling</label><br><input type='text' name="tab_erfaring_info[]">
-                                 </td>
-                                 <td>
-                                    <label>Sted</label><br><input type='text' name="tab_erfaring_adresse[]">
-                                 </td>
-                                 <td>
-                                    <label>Fra</label><br><input type='date' name="tab_erfaring_start[]">
-                                 </td>
-                                 <td>
-                                    <label>Til</label><br><input type='date' name="tab_erfaring_slutt[]">
-                                 </td>
-                                 </p>
-                              </tr>
-                           </tbody>
-                        </table>
-                     </fieldset>
-                  </div>
-                  <div class="row">
-                     <fieldset>
-                        <legend>Referanser</legend>
-                        <p> 
-                           <input type="button" class="btn btn-primary" value="Legg til referanse" onClick="addRow('referanseTable')" /> 
-                           <input type="button" class="btn btn-primary" value="Fjern referanse" onClick="deleteRow('referanseTable')"  /> 
-                        <p>(Marker en boks for å slette.)</p>
-                        </p>
-                        <table id="referanseTable">
-                           <tbody>
-                              <tr>
-                                 <td><input type="checkbox" name="chk[]"  /></td>
-                                 <p>
-                                 <td>
-                                    <label>Navn</label><br>
-                                    <input type="text" name="tab_referanse_navn[]"> 
-                                 </td>
-                                 <td>
-                                    <label>Firma</label><br>
-                                    <input type="text" name="tab_referanse_firma[]">
-                                 </td>
-                                 <td>
-                                    <label>Stilling</label><br>
-                                    <input type="text" name="tab_referanse_stilling[]"> 
-                                 </td>
-                                 <td>
-                                    <label>Telefon</label><br>
-                                    <input type="text" name="tab_referanse_nummer[]" size="8"> 
-                                 </td>
-                                 <td>
-                                    <label>Epost</label><br>
-                                    <input type="text" name="tab_referanse_epost[]"> 
-                                 </td>
-                                 </p>
-                              </tr>
-                           </tbody>
-                        </table>
-                     </fieldset>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <p><br><input class="btn btn-danger" type='submit' name='submit' value='Lag PDF!'></p>
             </div>
          </form>
       </div>
+      <?php include("footer.php") ?>
    </body>
 </html>

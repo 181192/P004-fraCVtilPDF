@@ -1,6 +1,6 @@
         <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://bootswatch.com/readable/bootstrap.min.css" type="stylesheet">
+    <link href="https://bootswatch.com/readable/bootstrap.min.css" type="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
@@ -16,3 +16,21 @@
 
     <!-- Theme JavaScript -->
     <script src="js/clean-blog.min.js"></script>
+
+    <!-- Datetimepicker js -->
+    <script src="dist/js/bootstrap-datepicker.js"></script>
+    <script src="dist/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Datetimepicker css -->
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-datepicker.css">
+
+    <!-- Mitt skript, for sletting av rader, og datepicker -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/datepicker.js"></script>
+
+    <!-- Min css for footer og main -->
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+

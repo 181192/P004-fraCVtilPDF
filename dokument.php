@@ -66,10 +66,8 @@
  		<?php foreach($tab_annet_type as $a => $b){?>
    		<tr>
    			<td width="168">
-   				<p><?php echo $tab_annet_type[$a]?></p>
+   				<p><strong><?php echo $tab_annet_type[$a]?></strong></p>
    			</td>
-   		</tr>
-   		<tr>
    			<td width="446">
    				<p><?php echo $tab_annet_info[$a]?></p>
    			</td>
@@ -82,7 +80,10 @@
 <table id = "interesserTable" style="margin-left: auto; margin-right: auto;">
    <tbody>
    	<tr>
-   		<td>
+   		<td width="168">
+            <p><strong>Interesser</strong></p>
+         </td>
+         <td width="447">
    			<p><?php echo $interesser_info ?></p>
    		</td>
    	</tr>

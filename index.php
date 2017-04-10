@@ -135,42 +135,42 @@
                               <tr>
                                  <p>
                                  <td> 
-                                    <label>Navn</label><br><input class="form-control" type='text' name='navn' placeholder="Navn" value="Lorem ipsum dolor">
+                                    <label>Navn</label><br><input class="form-control" type='text' name='navn' placeholder="Navn">
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Epost</label><br><input class="form-control" type='email' name='epost' placeholder="Epost" value="Lorem@ipsum.dolor">  
+                                    <label>Epost</label><br><input class="form-control" type='email' name='epost' placeholder="Epost">  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Telefon</label><br><input class="form-control" type='tel' name='telefon' maxlength="8" placeholder="Telefon" value="12345678">  
+                                    <label>Telefon</label><br><input class="form-control" type='tel' name='telefon' maxlength="8" placeholder="Telefon">  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Adresse</label><br><input class="form-control" type='text' name='adresse' placeholder="Adresse" value="Lorem ipsum dolor sit amet">  
+                                    <label>Adresse</label><br><input class="form-control" type='text' name='adresse' placeholder="Adresse">  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>LinkedIn</label><br><input class="form-control" type='url' name='linkedin' placeholder='LinkedIn' value="https://kalliainen.no">  
+                                    <label>LinkedIn</label><br><input class="form-control" type='url' name='linkedin' placeholder='LinkedIn'>  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Fødselsdato</label><br><input class="form-control" type='text' name='fodselsdato' id="fodselsdato" placeholder="Fødselsdato" value="11.07.1996">  
+                                    <label>Fødselsdato</label><br><input class="form-control" type='text' name='fodselsdato' id="fodselsdato" placeholder="Fødselsdato">  
                                  </td>
                                  </p>
                               </tr>
@@ -187,7 +187,7 @@
                                  <tr>
                                     <p>
                                     <td>                               
-                                       <textarea class="form-control" type="text" name="interesser_info" rows="6" cols="35" placeholder="Mine interesser er...">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat mollis metus ut bibendum. Nunc vitae risus sed tellus ornare sodales. Aliquam tempus tempus accumsan. Nam non tincidunt velit, vel fringilla sem. Mauris id maximus ante, ut iaculis diam. Sed aliquam lobortis arcu, in pellentesque odio. Etiam in sollicitudin tortor. Phasellus consectetur nisi libero, a iaculis ipsum gravida vulputate. Cras egestas feugiat metus vel scelerisque. Vestibulum maximus mi felis, id laoreet libero tristique eu.</textarea> 
+                                       <textarea class="form-control" type="text" name="interesser_info" rows="6" cols="35" placeholder="Mine interesser er..."></textarea> 
                                     </td>
                                     </p>
                                  </tr>
@@ -214,16 +214,16 @@
                                  <p>
                                  <td><input type="checkbox" name="chk[]"/><br><br></td>
                                  <td>
-                                    <label>Utdanningssted</label><br><input class="form-control" type="text" name="tab_utdanning_sted[]" placeholder="Utdanningssted" value="Lorem ipsum dolor">
+                                    <label>Utdanningssted</label><br><input class="form-control" type="text" name="tab_utdanning_sted[]" placeholder="Utdanningssted">
                                  </td>
                                  <td>
-                                    <label>Info om utdanning</label><br><input class="form-control" type='text' name="tab_utdanning_info[]" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat mollis metus ut bibendum. Nunc vitae risus sed tellus ornare sodales. Aliquam tempus tempus accumsan. Nam non tincidunt velit, vel fringilla sem. Mauris id maximus ante, ut iaculis diam.">
+                                    <label>Info om utdanning</label><br><input class="form-control" type='text' name="tab_utdanning_info[]" placeholder="Info om utdanning">
                                  </td>
                                  <td>
-                                    <label>Fra</label><br><input class="form-control datepicker" type='text' name="tab_utdanning_start[]" value="Jan 2018">
+                                    <label>Fra</label><br><input class="form-control datepicker" type='text' name="tab_utdanning_start[]" placeholder="Fra">
                                  </td>
                                  <td>
-                                    <label>Til</label><br><input class="form-control datepicker" type='text' name="tab_utdanning_slutt[]" value="Mar 2050">
+                                    <label>Til</label><br><input class="form-control datepicker" type='text' name="tab_utdanning_slutt[]" placeholder="Til">
                                  </td>
                                  </p>
                               </tr>
@@ -245,7 +245,7 @@
                                  <p>
                                  <td><input type="checkbox" name="chk[]"/></td>
                                  <td>
-                                    <label>Firma</label><br><input class="form-control" type="text" name="tab_erfaring_firma[]" value="Lorem ipsum dolor">
+                                    <label>Firma</label><br><input class="form-control" type="text" name="tab_erfaring_firma[]" placeholder="Firma">
                                  </td>
                                  <td>
                                     <label>Type</label><br>
@@ -259,16 +259,16 @@
                                     </select>
                                  </td>
                                  <td>
-                                    <label>Info om stilling</label><br><input class="form-control" type='text' name="tab_erfaring_info[]" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat mollis metus ut bibendum. Nunc vitae risus sed tellus ornare sodales. Aliquam tempus tempus accumsan. Nam non tincidunt velit, vel fringilla sem. Mauris id maximus ante, ut iaculis diam.">
+                                    <label>Info om stilling</label><br><input class="form-control" type='text' name="tab_erfaring_info[]" placeholder="Info om stilling">
                                  </td>
                                  <td>
-                                    <label>Sted</label><br><input class="form-control" type='text' name="tab_erfaring_adresse[]" value="Lagunen, Bergen">
+                                    <label>Sted</label><br><input class="form-control" type='text' name="tab_erfaring_adresse[]" placeholder="Sted">
                                  </td>
                                  <td>
-                                    <label>Fra</label><br><input class="form-control datepicker" type='text' name="tab_erfaring_start[]" value="Feb 2018">
+                                    <label>Fra</label><br><input class="form-control datepicker" type='text' name="tab_erfaring_start[]" placeholder="Fra">
                                  </td>
                                  <td>
-                                    <label>Til</label><br><input class="form-control datepicker" type='text' name="tab_erfaring_slutt[]" value="Mar 2020">
+                                    <label>Til</label><br><input class="form-control datepicker" type='text' name="tab_erfaring_slutt[]" placeholder="Til">
                                  </td>
                                  </p>
                               </tr>
@@ -291,23 +291,23 @@
                                  <p>
                                  <td>
                                     <label>Navn</label><br>
-                                    <input class="form-control" type="text" name="tab_referanse_navn[]" value="Lorem ipsum dolor"> 
+                                    <input class="form-control" type="text" name="tab_referanse_navn[]" placeholder="Navn"> 
                                  </td>
                                  <td>
                                     <label>Firma</label><br>
-                                    <input class="form-control" type="text" name="tab_referanse_firma[]" value="Lorem ipsum dolor">
+                                    <input class="form-control" type="text" name="tab_referanse_firma[]" placeholder="Firma">
                                  </td>
                                  <td>
                                     <label>Stilling</label><br>
-                                    <input class="form-control" type="text" name="tab_referanse_stilling[]" value="Lorem ipsum dolor"> 
+                                    <input class="form-control" type="text" name="tab_referanse_stilling[]" placeholder="Stilling"> 
                                  </td>
                                  <td>
                                     <label>Telefon</label><br>
-                                    <input class="form-control" type="tel" name="tab_referanse_nummer[]" maxlength="8" value="12345678"> 
+                                    <input class="form-control" type="tel" name="tab_referanse_nummer[]" maxlength="8" placeholder="Telefon"> 
                                  </td>
                                  <td>
                                     <label>Epost</label><br>
-                                    <input class="form-control" type="text" name="tab_referanse_epost[]" value="Lorem@ipsum.dolor"> 
+                                    <input class="form-control" type="text" name="tab_referanse_epost[]" placeholder="Epost"> 
                                  </td>
                                  </p>
                               </tr>
@@ -330,11 +330,11 @@
                                  <td><input type="checkbox" name="chk[]"  /></td>
                                  <td>
                                     <label>Type</label><br>
-                                    <input class="form-control" type="text" name="tab_annet_type[]" value="Språk"> 
+                                    <input class="form-control" type="text" name="tab_annet_type[]" placeholder="Type"> 
                                  </td>
                                  <td>
                                     <label>Info</label><br>
-                                    <input class="form-control" type="text" name="tab_annet_info[]" value="Norsk morsmål, flytende muntlig">
+                                    <input class="form-control" type="text" name="tab_annet_info[]" placeholder="Info">
                                  </td>
                                  </p>
                               </tr>

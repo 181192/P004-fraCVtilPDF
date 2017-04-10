@@ -135,42 +135,42 @@
                               <tr>
                                  <p>
                                  <td> 
-                                    <label>Navn</label><br><input class="form-control" type='text' name='navn' placeholder="Navn">
+                                    <label>Navn</label><br><input class="form-control" type='text' name='navn' placeholder="Navn" required>
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Epost</label><br><input class="form-control" type='email' name='epost' placeholder="Epost">  
+                                    <label>Epost</label><br><input class="form-control" type='email' name='epost' placeholder="Epost" required>  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Telefon</label><br><input class="form-control" type='tel' name='telefon' maxlength="8" placeholder="Telefon">  
+                                    <label>Telefon</label><br><input class="form-control" type='tel' name='telefon' maxlength="8" placeholder="Telefon" required>  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Adresse</label><br><input class="form-control" type='text' name='adresse' placeholder="Adresse">  
+                                    <label>Adresse</label><br><input class="form-control" type='text' name='adresse' placeholder="Adresse" required>  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>LinkedIn</label><br><input class="form-control" type='url' name='linkedin' placeholder='LinkedIn'>  
+                                    <label>LinkedIn</label><br><input class="form-control" type='url' name='linkedin' placeholder='LinkedIn' required>  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Fødselsdato</label><br><input class="form-control" type='text' name='fodselsdato' id="fodselsdato" placeholder="Fødselsdato">  
+                                    <label>Fødselsdato</label><br><input class="form-control" type='text' name='fodselsdato' id="fodselsdato" placeholder="Fødselsdato" required>  
                                  </td>
                                  </p>
                               </tr>

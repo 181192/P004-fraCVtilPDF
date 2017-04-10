@@ -362,6 +362,7 @@
       <!-- Datetimepicker js -->
       <script src="dist/js/bootstrap-datepicker.js"></script>
       <script src="dist/js/bootstrap-datepicker.min.js"></script>
+      <script src="dist/locales/bootstrap-datepicker.nb.min.js"></script>
 
       <!-- Bootstrap Core JavaScript -->
       <script src="vendor/bootstrap/js/bootstrap.min.js"></script>

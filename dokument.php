@@ -7,8 +7,8 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title><?php echo $navn;?></title>
       <!-- Bootstrap Core CSS -->
-      <link href="../vendor/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
-      <link href="../css/dokument.css" rel="stylesheet" type="text/css">
+      <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+      <link href="css/dokument.css" rel="stylesheet" type="text/css">
    </head>
    <body>
       <div class="container">

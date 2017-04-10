@@ -103,10 +103,10 @@
       <title>Fra CV Til PDF</title>
 
       <!-- Bootstrap Core CSS -->
-      <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
       <!-- Custom Fonts -->
-      <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
       <!-- Datetimepicker css -->
       <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-datepicker.css">
@@ -117,7 +117,7 @@
    </head>
    <body>
       <header>
-        <?php include('headermenu.php');?>
+        <?php include('../module/headermenu.php');?>
          <div class="container text-left" style="margin-top: 50px;">
             <h1><strong>Fra CV til PDF!</strong></h1>
             <p>Før inn all informasjon du måtte ønske til din CV, og trykk <strong>generer min CV!</strong> for å få en perfekt formatert CV</p>

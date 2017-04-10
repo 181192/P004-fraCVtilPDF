@@ -77,7 +77,7 @@
    
    $path = (getenv('MPDF_ROOT')) ? getenv('MPDF_ROOT') : __DIR__;
    require_once $path . '/vendor/autoload.php';
-   $mpdf = new \Mpdf\Mpdf(['mode' => 'c']);
+   $mpdf = new \Mpdf\Mpdf(["mode -> 'c'"]);
    
    
    //skriv html koden om til et PDF dokument
@@ -101,11 +101,24 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Fra CV Til PDF</title>
-      <?php include('oppsett.php');?> 
+
+      <!-- Bootstrap Core CSS -->
+      <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Custom Fonts -->
+      <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+      <!-- Datetimepicker css -->
+      <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-datepicker.css">
+
+      <!-- Min css for footer og main -->
+      <link rel="stylesheet" type="text/css" href="css/footer.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
    </head>
    <body>
       <header>
-         <div class="container text-left">
+        <?php include('headermenu.php');?>
+         <div class="container text-left" style="margin-top: 50px;">
             <h1><strong>Fra CV til PDF!</strong></h1>
             <p>Før inn all informasjon du måtte ønske til din CV, og trykk <strong>generer min CV!</strong> for å få en perfekt formatert CV</p>
          </div>
@@ -122,42 +135,42 @@
                               <tr>
                                  <p>
                                  <td> 
-                                    <label>Navn</label><br><input class="form-control" type='text' name='navn' placeholder="Ola Nordmann">
+                                    <label>Navn</label><br><input class="form-control" type='text' name='navn' placeholder="Navn" value="Lorem ipsum dolor">
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Epost</label><br><input class="form-control" type='email' name='epost' placeholder="mail@mail.no">  
+                                    <label>Epost</label><br><input class="form-control" type='email' name='epost' placeholder="Epost" value="Lorem@ipsum.dolor">  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Telefon</label><br><input class="form-control" type='tel' name='telefon' maxlength="8" placeholder="98765432">  
+                                    <label>Telefon</label><br><input class="form-control" type='tel' name='telefon' maxlength="8" placeholder="Telefon" value="12345678">  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Adresse</label><br><input class="form-control" type='text' name='adresse' placeholder='Eksempelveien 1, 1010 Eksempel'>  
+                                    <label>Adresse</label><br><input class="form-control" type='text' name='adresse' placeholder="Adresse" value="Lorem ipsum dolor sit amet">  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>LinkedIn</label><br><input class="form-control" type='url' name='linkedin' placeholder='linkedin.com/in/profilnavn/'>  
+                                    <label>LinkedIn</label><br><input class="form-control" type='url' name='linkedin' placeholder='LinkedIn' value="https://kalliainen.no">  
                                  </td>
                                  </p>
                               </tr>
                               <tr>
                                  <p>
                                  <td>
-                                    <label>Fødselsdato</label><br><input class="form-control" type='text' name='fodselsdato' id="fodselsdato">  
+                                    <label>Fødselsdato</label><br><input class="form-control" type='text' name='fodselsdato' id="fodselsdato" placeholder="Fødselsdato" value="11.07.1996">  
                                  </td>
                                  </p>
                               </tr>
@@ -174,7 +187,7 @@
                                  <tr>
                                     <p>
                                     <td>                               
-                                       <textarea class="form-control" type="text" name="interesser_info" rows="6" cols="35" placeholder="Mine interesser er..."></textarea> 
+                                       <textarea class="form-control" type="text" name="interesser_info" rows="6" cols="35" placeholder="Mine interesser er...">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat mollis metus ut bibendum. Nunc vitae risus sed tellus ornare sodales. Aliquam tempus tempus accumsan. Nam non tincidunt velit, vel fringilla sem. Mauris id maximus ante, ut iaculis diam. Sed aliquam lobortis arcu, in pellentesque odio. Etiam in sollicitudin tortor. Phasellus consectetur nisi libero, a iaculis ipsum gravida vulputate. Cras egestas feugiat metus vel scelerisque. Vestibulum maximus mi felis, id laoreet libero tristique eu.</textarea> 
                                     </td>
                                     </p>
                                  </tr>
@@ -182,9 +195,6 @@
                            </table>
                         </fieldset>
                      </div>
-                  </div>
-                  <div class="row">
-                     <p><br><input class="btn-lg btn-danger" type='submit' name='submit' value='Generer min CV!'></p>
                   </div>
                </div>
                <div class="col-md-1">
@@ -204,16 +214,16 @@
                                  <p>
                                  <td><input type="checkbox" name="chk[]"/><br><br></td>
                                  <td>
-                                    <label>Utdanningssted</label><br><input class="form-control" type="text" name="tab_utdanning_sted[]">
+                                    <label>Utdanningssted</label><br><input class="form-control" type="text" name="tab_utdanning_sted[]" placeholder="Utdanningssted" value="Lorem ipsum dolor">
                                  </td>
                                  <td>
-                                    <label>Info om utdanning</label><br><input class="form-control" type='text' name="tab_utdanning_info[]">
+                                    <label>Info om utdanning</label><br><input class="form-control" type='text' name="tab_utdanning_info[]" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat mollis metus ut bibendum. Nunc vitae risus sed tellus ornare sodales. Aliquam tempus tempus accumsan. Nam non tincidunt velit, vel fringilla sem. Mauris id maximus ante, ut iaculis diam.">
                                  </td>
                                  <td>
-                                    <label>Fra</label><br><input class="form-control datepicker" type='text' name="tab_utdanning_start[]">
+                                    <label>Fra</label><br><input class="form-control datepicker" type='text' name="tab_utdanning_start[]" value="Jan 2018">
                                  </td>
                                  <td>
-                                    <label>Til</label><br><input class="form-control datepicker" type='text' name="tab_utdanning_slutt[]">
+                                    <label>Til</label><br><input class="form-control datepicker" type='text' name="tab_utdanning_slutt[]" value="Mar 2050">
                                  </td>
                                  </p>
                               </tr>
@@ -235,7 +245,7 @@
                                  <p>
                                  <td><input type="checkbox" name="chk[]"/></td>
                                  <td>
-                                    <label>Firma</label><br><input class="form-control" type="text" name="tab_erfaring_firma[]">
+                                    <label>Firma</label><br><input class="form-control" type="text" name="tab_erfaring_firma[]" value="Lorem ipsum dolor">
                                  </td>
                                  <td>
                                     <label>Type</label><br>
@@ -249,16 +259,16 @@
                                     </select>
                                  </td>
                                  <td>
-                                    <label>Info om stilling</label><br><input class="form-control" type='text' name="tab_erfaring_info[]">
+                                    <label>Info om stilling</label><br><input class="form-control" type='text' name="tab_erfaring_info[]" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat mollis metus ut bibendum. Nunc vitae risus sed tellus ornare sodales. Aliquam tempus tempus accumsan. Nam non tincidunt velit, vel fringilla sem. Mauris id maximus ante, ut iaculis diam.">
                                  </td>
                                  <td>
-                                    <label>Sted</label><br><input class="form-control" type='text' name="tab_erfaring_adresse[]">
+                                    <label>Sted</label><br><input class="form-control" type='text' name="tab_erfaring_adresse[]" value="Lagunen, Bergen">
                                  </td>
                                  <td>
-                                    <label>Fra</label><br><input class="form-control datepicker" type='text' name="tab_erfaring_start[]">
+                                    <label>Fra</label><br><input class="form-control datepicker" type='text' name="tab_erfaring_start[]" value="Feb 2018">
                                  </td>
                                  <td>
-                                    <label>Til</label><br><input class="form-control datepicker" type='text' name="tab_erfaring_slutt[]">
+                                    <label>Til</label><br><input class="form-control datepicker" type='text' name="tab_erfaring_slutt[]" value="Mar 2020">
                                  </td>
                                  </p>
                               </tr>
@@ -281,23 +291,23 @@
                                  <p>
                                  <td>
                                     <label>Navn</label><br>
-                                    <input class="form-control" type="text" name="tab_referanse_navn[]"> 
+                                    <input class="form-control" type="text" name="tab_referanse_navn[]" value="Lorem ipsum dolor"> 
                                  </td>
                                  <td>
                                     <label>Firma</label><br>
-                                    <input class="form-control" type="text" name="tab_referanse_firma[]">
+                                    <input class="form-control" type="text" name="tab_referanse_firma[]" value="Lorem ipsum dolor">
                                  </td>
                                  <td>
                                     <label>Stilling</label><br>
-                                    <input class="form-control" type="text" name="tab_referanse_stilling[]"> 
+                                    <input class="form-control" type="text" name="tab_referanse_stilling[]" value="Lorem ipsum dolor"> 
                                  </td>
                                  <td>
                                     <label>Telefon</label><br>
-                                    <input class="form-control" type="tel" name="tab_referanse_nummer[]" maxlength="8"> 
+                                    <input class="form-control" type="tel" name="tab_referanse_nummer[]" maxlength="8" value="12345678"> 
                                  </td>
                                  <td>
                                     <label>Epost</label><br>
-                                    <input class="form-control" type="text" name="tab_referanse_epost[]"> 
+                                    <input class="form-control" type="text" name="tab_referanse_epost[]" value="Lorem@ipsum.dolor"> 
                                  </td>
                                  </p>
                               </tr>
@@ -320,11 +330,11 @@
                                  <td><input type="checkbox" name="chk[]"  /></td>
                                  <td>
                                     <label>Type</label><br>
-                                    <input class="form-control" type="text" name="tab_annet_type[]"> 
+                                    <input class="form-control" type="text" name="tab_annet_type[]" value="Språk"> 
                                  </td>
                                  <td>
                                     <label>Info</label><br>
-                                    <input class="form-control" type="text" name="tab_annet_info[]">
+                                    <input class="form-control" type="text" name="tab_annet_info[]" value="Norsk morsmål, flytende muntlig">
                                  </td>
                                  </p>
                               </tr>
@@ -334,8 +344,30 @@
                   </div>
                </div>
             </div>
+            <div class="row">
+           	   <div class="col-md-4">
+                  <p><input class="btn-lg btn-danger" type='submit' name='submit' value='Generer min CV!'></p>
+               </div>
+            </div>
          </form>
       </div>
       <?php include("footer.php") ?>
+      
+      <!-- jQuery -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+
+      <!-- Theme JavaScript -->
+      <script src="js/clean-blog.min.js"></script>
+
+      <!-- Datetimepicker js -->
+      <script src="dist/js/bootstrap-datepicker.js"></script>
+      <script src="dist/js/bootstrap-datepicker.min.js"></script>
+
+      <!-- Bootstrap Core JavaScript -->
+      <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+      <!-- Mitt skript, for sletting av rader, og datepicker -->
+      <script type="text/javascript" src="js/script.js"></script>
+      <script type="text/javascript" src="js/datepicker.js"></script>
    </body>
 </html>

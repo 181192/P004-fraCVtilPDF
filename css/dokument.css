@@ -1,0 +1,14 @@
+.column-top-right {
+	width: 168;
+	padding-right: 10px; 
+	text-align: right; 
+	vertical-align: top
+}
+h2 {
+  font-size: 18px;
+  width:100%;
+  border-bottom: solid 1px #000;
+}
+body {
+	font-size: 12px;
+}

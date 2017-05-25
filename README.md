@@ -1,8 +1,8 @@
 # P04-fraCVtilPDF
 
 ## Beskrivelse
-
 Nettsiden kjører, og designet på PDF malen er nesten i mål.
+Innlegg blogg: https://kalliainen.no/fra-cv-til-pdf
 
 ![cv](https://kalliainen.no/img/cvtilpdf/cvogform.jpg)
 

@@ -4,6 +4,8 @@
 
 Nettsiden kjører, og designet på PDF malen er nesten i mål.
 
+![cv](https://kalliainen.no/img/cvtilpdf/cvogform.jpg)
+
 ### Fra CV til PDF kan gjøre:
 
 - Legge til Navn, Telefonnummer, Adresse, Epost og Fødselsdato
